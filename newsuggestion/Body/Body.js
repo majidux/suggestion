@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 
 export default class Body extends Component {
     render() {
@@ -15,7 +15,38 @@ export default class Body extends Component {
                     <View style={[styles.suggTitle, styles.commonStyle]}>
                         <Text style={[styles.textInBoxes, styles.textInBox2]}>پیشنهاد خود را بنویسید ...</Text>
                     </View>
-                    <View>
+                    <View style={styles.buttons}>
+                    <TouchableOpacity style={styles.commonButton}>
+                        <View>
+                            <Text style={styles.buttonFontStyles}>پیشنهاد های من</Text>
+                        </View>
+                </TouchableOpacity>
+                        <TouchableOpacity style={[styles.commonButton, styles.button]}>
+                            <View style={styles.viewTouch}>
+                                <Text style={styles.buttonFontStyles}>سرویس</Text>
+                                <Image
+                                    source={require('../image/dropDown.png')}
+                                />
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.commonButton, styles.button]}>
+                            <View style={styles.viewTouch}>
+                                <Text style={styles.buttonFontStyles}>محصول</Text>
+                                <Image
+                                    source={require('../image/dropDown.png')}
+                                />
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.commonButton}>
+                            <View>
+                                <Text style={styles.buttonFontStyles}>جدیدترین</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={[styles.commonButton, {backgroundColor: '#ff795f'}]}>
+                            <View>
+                                <Text style={[styles.buttonFontStyles, {color: 'white'}]}>داغ ترین</Text>
+                            </View>
+                        </TouchableOpacity>
                     
                     </View>
                 </View>
@@ -31,6 +62,7 @@ const styles = StyleSheet.create({
     allContent: {
         paddingRight: 35,
         paddingTop: 20,
+        flex: 1
     },
     mainTitleText: {
         color: 'black',
@@ -64,6 +96,33 @@ const styles = StyleSheet.create({
     commonStyle2: {
         marginTop: 10,
     },
+    buttons: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        marginTop: 20
+    },
+    commonButton: {
+        backgroundColor: '#f3f6fa',
+        flex: .12,
+        paddingVertical: 8,
+        marginHorizontal: 5,
+        alignItems: 'center',
+    },
     
+    button: {
+        flex: .14,
+        justifyContent: 'space-around',
+        flexDirection: 'row-reverse',
+    },
+    buttonFontStyles: {
+        color: 'black',
+        fontSize: 14,
+    },
+    viewTouch:{
+        flex:1,
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        flexDirection: 'row-reverse',
+    }
     
 });
