@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Image} from 'react-native';
+import {View, Text, StyleSheet, Image,TouchableOpacity} from 'react-native';
 
 export default class Sidebar extends Component {
     render() {
@@ -28,9 +28,11 @@ export default class Sidebar extends Component {
                             </Text>
                         </View>
                         <View style={styles.noficationPanelButton}>
-                            <View style={styles.buttonWrapper}>
-                                <Text style={{color: "#eee"}}>برو</Text>
-                            </View>
+                            <TouchableOpacity>
+                                <View style={styles.buttonWrapper}>
+                                    <Text style={{color: "#eee",fontSize:17}}>برو</Text>
+                                </View>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </View>
@@ -53,7 +55,7 @@ export default class Sidebar extends Component {
                                 <Image source={require("../image/buttonUp.png")}/>
                             </View>
                             <View>
-                                <Text style={{fontWeight:'bold',fontSize:15}}>۱ پروداکت ریلیز</Text>
+                                <Text style={{fontWeight: 'bold', fontSize: 15}}>۱ پروداکت ریلیز</Text>
                             </View>
                         </View>
                         <View style={styles.listDetails}>
@@ -70,7 +72,7 @@ export default class Sidebar extends Component {
                                 <Image source={require("../image/buttonUp.png")}/>
                             </View>
                             <View>
-                                <Text style={{fontWeight:'bold',fontSize:15}}>۲ پروداکت ریلیز</Text>
+                                <Text style={{fontWeight: 'bold', fontSize: 15}}>۲ پروداکت ریلیز</Text>
                             </View>
                         </View>
                         <View style={styles.listDetails}>
@@ -86,11 +88,11 @@ export default class Sidebar extends Component {
                                 <Image source={require("../image/Icon-Shade.png")}/>
                             </View>
                             <View>
-                                <Text style={{fontWeight:'bold',fontSize:15}}>۱ پروداکت ریلیز</Text>
+                                <Text style={{fontWeight: 'bold', fontSize: 15}}>۱ پروداکت ریلیز</Text>
                             </View>
                         </View>
                         <View style={styles.listDetails}>
-
+                        
                         </View>
                     </View>
                 </View>
@@ -105,7 +107,7 @@ const styles = StyleSheet.create({
     sideBar: {
         flex: 0.25,
         borderColor: "steelblue",
-        backgroundColor:'white',
+        backgroundColor: 'white',
         // borderWidth: 13,
         padding: 25,
         paddingTop: 40
@@ -122,7 +124,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: "#eeeeee",
         paddingHorizontal: 10,
-
+        
     },
     noficationPanelHeader: {
         flex: 0.25,
@@ -185,7 +187,7 @@ const styles = StyleSheet.create({
         justifyContent: "space-evenly",
         paddingRight: 20,
     },
-    textStyle:{
+    textStyle: {
         fontSize: 14,
         color: '#ff795f',
     }
